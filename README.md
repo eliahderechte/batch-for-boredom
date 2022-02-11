@@ -35,5 +35,5 @@ There may be partially malfunctions, but all in all, it should be working. <br/>
 
 
 ## Requirements
-Python3.10 and required Modules for Tool Nr. 13, 14, 15, 18 <br/>
-Git
+- Python3.10 and required Modules for Tool Nr. 13, 14, 15, 18 (inclueded in the clone, you can install these in control.bat)<br/>
+- Git (required for cloning, or you can just Download the .zip if you want to, however, git is going to be more convenient)
