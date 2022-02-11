@@ -10,6 +10,7 @@ All tools except 13, 14, 15, 18 (python) work without any additional installatio
 To use these tools, you need to install Python3.10 and the required modules. 
 To do so just launch the script via controls.bat and goto 16 and install it.
 
-Installation:
+
+## Installation:
 
 git clone https://github.com/eliahderechte/batch-for-boredom
