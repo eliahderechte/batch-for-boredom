@@ -1,14 +1,14 @@
 # batch-for-boredom
-Batch script I made just for fun. I tried to make it cmd only, but I eventually ran out of ideas, so I decided to use python as well. 
+Batch script I made just for fun. I tried to make it cmd only, but I eventually ran out of ideas, so I decided to use python as well <br/>
 
-It is a batch file so it obviously only works for Windows systems.
-It is nothing supercool, I started it when I began learning batch and continued working on it until now.
-I am okay with the comeout, but it's still far away from satisfying me.
-I'll try to give updates and newer versions of this weekly.
+It is a batch file so it obviously only works for Windows systems. <br/>
+It is nothing supercool, I started it when I began learning batch and continued working on it until now. <br/>
+I am okay with the comeout, but it's still far away from satisfying me. <br/>
+I'll try to give updates and newer versions of this weekly. <br/>
 
-All tools except 13, 14, 15, 18 (python) work without any additional installations.
-To use these tools, you need to install Python3.10 and the required modules. 
-To do so just launch the script via control.bat and goto 16 and install it.
+All tools except 13, 14, 15, 18 (python) work without any additional installations. <br/>
+To use these tools, you need to install Python3.10 and the required modules. <br/>
+To do so just launch the script via control.bat and goto 16 and install it. <br/>
 
 
 ## Installation:
