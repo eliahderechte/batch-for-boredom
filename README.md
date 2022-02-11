@@ -13,4 +13,9 @@ To do so just launch the script via controls.bat and goto 16 and install it.
 
 ## Installation:
 
+```
 git clone https://github.com/eliahderechte/batch-for-boredom
+cd batch-for-boredom
+control.bat
+```
+
