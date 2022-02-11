@@ -14,6 +14,7 @@ To do so just launch the script via control.bat and goto 16 and install it. <br/
 ## Installation:
 
 ```
+Open a new Terminal
 git clone https://github.com/eliahderechte/batch-for-boredom
 cd batch-for-boredom
 control.bat
@@ -31,3 +32,8 @@ Don't worry about some error messages, it should still work without any problems
 ## Compability
 It should be working on Windows 10, 8 and 7 without major problems, due to simple coding and not using complex commands which were added later on. <br/>
 There may be partially malfunctions, but all in all, it should be working. <br/>
+
+
+## Requirements
+Python3.10 and required Modules for Tool Nr. 13, 14, 15, 18 <br/>
+Git
