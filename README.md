@@ -20,5 +20,5 @@ control.bat
 ```
 
 ## Compability
-It should be working on Windows 10, 8 and 7 without major problems, due to simple coding and not using complex commands.
+It should be working on Windows 10, 8 and 7 without major problems, due to simple coding and not using complex commands which were added later on.
 There may be partially malfunctions, but all in all, it should be working.
