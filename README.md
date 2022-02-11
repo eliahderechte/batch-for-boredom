@@ -8,7 +8,7 @@ I'll try to give updates and newer versions of this weekly.
 
 All tools except 13, 14, 15, 18 (python) work without any additional installations.
 To use these tools, you need to install Python3.10 and the required modules. 
-To do so just launch the script via controls.bat and goto 16 and install it.
+To do so just launch the script via control.bat and goto 16 and install it.
 
 
 ## Installation:
