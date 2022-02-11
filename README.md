@@ -19,6 +19,15 @@ cd batch-for-boredom
 control.bat
 ```
 
+### Installation Python and required Modules:
+Go to Number 16 in the Mainmenu
+Enter 'py' first
+After installing Python from the Microsoft Store go back
+Now Enter 'modules'
+Don't worry about some error messages, it should still work without any problems
+
+
+
 ## Compability
 It should be working on Windows 10, 8 and 7 without major problems, due to simple coding and not using complex commands which were added later on.
 There may be partially malfunctions, but all in all, it should be working.
