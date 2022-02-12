@@ -11,7 +11,7 @@ To use these tools, you need to install Python3.10 and the required modules. <br
 To do so just launch the script via control.bat and goto 16 and install it. <br/>
 
 
-## Installation:
+## Installation & usage:
 
 ```
 Open a new Terminal
