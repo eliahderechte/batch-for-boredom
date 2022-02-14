@@ -1,6 +1,6 @@
 @echo off
 
-title CMD Tools
+title Your mom lol
 
 if not "%1" == "max" start /MAX cmd /c %0 max & exit/b
 
@@ -310,6 +310,8 @@ timeout /t 1 >nul
 
 cls
 
+type wifitools.txt
+
 :start1
 
 
@@ -345,16 +347,21 @@ REM NETSTATS>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type wifitools.txt
+
 echo You cannot go back if the job started, you can only close the script entirely.
 set /p NETSTATDEC="Do you want to continue? [y/n]: "
 
-if %NETSTATDEC%==y goto :netst
-if %NETSTATDEC%==n goto :wifimenu
+if %NETSTATDEC%==y goto netst
+if %NETSTATDEC%==n goto wifimenu
+if %NETSTATDEC%==exit goto wifimenu
 
 
 :netst
 
 cls
+
+type wifitools.txt
 
 echo Be patient, this may take some time
 
@@ -376,15 +383,20 @@ REM TRACEROUTEC
 
 cls 
 
+type wifitools.txt
 
 echo You cannot go back if the job started, you can only close the script entirely.
 set /p traceroutedecc="Do you want to continue? [y/n]: "
 
-if %traceroutedecc%==y goto :tracertc
-if %traceroutedecc%==n goto :wifimenu
-
+if %traceroutedecc%==y goto tracertc
+if %traceroutedecc%==n goto wifimenu
+if %traceroutedecc%==exit goto wifimenu
 
 :tracertc
+
+cls
+
+type wifitools.txt
 
 set /p tracertdec="Enter Domain/Website (without http/https or www): "
 
@@ -438,6 +450,7 @@ REM IP001>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type iptools.txt
 
 set /p DOMAIN="Enter website to ping(without http/https and www): "
 
@@ -469,7 +482,6 @@ REM MAC-------------------------------------------------------------------------
 :mac
 
 cls
-
 
 echo Gathering Address ...
 
@@ -522,6 +534,8 @@ REM SYSTEMINFO>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type systemtools.txt
+
 Systeminfo
 
 pause
@@ -535,6 +549,7 @@ REM POWERUSAGE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type systemtools.txt
 
 icacls "%windir%\system32\config\system" >nul 2>&1
 if [%errorlevel%] neq [0] (
@@ -560,6 +575,7 @@ REM SYSFILE>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type systemtools.txt
 
 icacls "%windir%\system32\config\system" >nul 2>&1
 if [%errorlevel%] neq [0] (
@@ -585,6 +601,8 @@ REM USERCHECK>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type systemtools.txt
+
 net user
 
 pause 
@@ -597,6 +615,8 @@ REM HOSTNAMECHECK>>>>>>>>>>>>>>>>>
 :hostnamecheck
 
 cls
+
+type systemtools.txt
 
 echo Hostname:
 
@@ -612,6 +632,8 @@ REM BACKUP>>>>>>>>>>>>>>>>>
 :backup
 
 cls
+
+type systemtools.txt
 
 icacls "%windir%\system32\config\system" >nul 2>&1
 if [%errorlevel%] neq [0] (
@@ -816,6 +838,8 @@ REM NOWHOISDOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 cls 
 
+type websitetools.txt
+
 set /p whoisdec1="Enter domain/website without http/https or www: "
 
 if %whoisdec1%==exit goto mainmenu
@@ -833,6 +857,8 @@ REM WHOISDOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :whoisdownload
 
 cls
+
+type websitetools.txt
 
 echo It seems you do not have the require files, leave the work off to me (you need a wifi connection)
 
@@ -889,10 +915,13 @@ REM CURL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type websitetools.txt
+
 set /p curlweb="Enter Website to curl(without http/https or www): "
 
-curl %curlweb% --include
+if %curlweb%==exit goto webtools
 
+curl %curlweb% --include
 
 pause
 
@@ -905,6 +934,8 @@ REM BANNERS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type websitetools.txt
+
 if exist C:\Windows\System32\BINDInstall.exe (goto downloadbann) else goto nodownloadbann
 
 
@@ -913,6 +944,8 @@ REM NODOWNLOADBANN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :nodownloadbann
 
 cls
+
+type websitetools.txt
 
 echo It seems you do not have the require files, leave the work off to me (you need a wifi connection)
 
@@ -962,6 +995,8 @@ REM DOWNLOADBANN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 cls
 
+type websitetools.txt
+
 set /p bannerdec="Enter Website(without http/https or www): "
 
 if %bannerdec%==exit goto webtools
@@ -983,9 +1018,16 @@ REM ROBOTSTXT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type websitetools.txt
+
 set /p ROBOTST="Enter Social Media Webpage without http/https or www(f.e. instagram.com facebook.com etc): "
 
-"C:\Program Files\Google\Chrome\Application\chrome.exe" -incognito "https://www.%ROBOTST%/robots.txt"
+if %ROBOTST%==exit goto webtools
+else {
+     "C:\Program Files\Google\Chrome\Application\chrome.exe" -incognito "https://www.%ROBOTST%/robots.txt"
+}
+
+
 
 goto webtools
 
@@ -994,9 +1036,15 @@ goto webtools
 REM WEBCAMXP5>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 :webcamxp5
+
 cls
+
+type websitetools.txt
+
+echo ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo After Chrome opened, go into the search field and press CTRL+V and hit enter, accept the cookies and you're good to go. Remember only open links that have an IP as URL, or sites that have either a 'webcamXP5 -' or a '- webcamXP5' quote in their titles. 
 echo P.S. Go into the search field a second time and press enter for darkmode :) (Press anything to open provided Chrome browser)
+echo ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 pause
 
@@ -1025,6 +1073,8 @@ REM TCPLIST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 cls
 
+type websitetools.txt
+
 if exist C:\Windows\System32\tcpvcon.exe (goto download12) else goto nodownload12
 
 
@@ -1033,6 +1083,8 @@ REM DOWNLOAD12>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :download12
 
 cls
+
+type websitetools.txt
 
 set /p halal3="This job takes some time. Continue? [y/n]: "
 
@@ -1061,6 +1113,8 @@ REM NODOWNLOAD12>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :nodownload12
 
 cls
+
+type websitetools.txt
 
 echo It seems you do not have the require files, leave the work off to me (you need a wifi connection)
 
@@ -1219,6 +1273,8 @@ if %msgdec%==exit goto mainmenu
 
 cls
 
+type ipmessages.txt
+
 echo -------------------------------------------------------------------------------------------------------
 echo First, you'll see an IP. The Computer you wish to send the message to will have to Enter this IP.
 echo Enter your Message and wait for a connection.
@@ -1234,6 +1290,8 @@ goto nono
 
 cls
 
+type ipmessages.txt
+
 echo ----------------------------------------------------------------------------------------
 echo The Person sending you the message will see an IP. Enter the IP to recieve the message.
 echo You can also find out if you know the other persons Computer's name(you'll see yourself)
@@ -1247,6 +1305,8 @@ goto nono
 
 cls
 
+type ipmessages.txt
+
 set /p msginput="Do you want to recieve a message or send a message?[send/recieve]: "
 
 if %msginput%==send goto msgsend
@@ -1258,6 +1318,8 @@ REM MSGSEND>>>>>>>>>>>>>>>>>>>>>>>>>>
 :msgsend
 
 cls
+
+type ipmessages.txt
 
 @for /f "delims=[] tokens=2" %%a in ('ping -4 -n 1 %ComputerName% ^| findstr [') do (
     set "MY_IP=%%a"
@@ -1281,6 +1343,8 @@ REM MSGRECIEVE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :msgrecieve
 
 cls
+
+type ipmessages.txt
 
 echo 01 You can ask the other Person for their IP, which should be already displayed if they selected sender
 echo 02 You can ping their machine if you know their name
@@ -1311,6 +1375,8 @@ goto nono
 
 cls
 
+type ipmessages.txt
+
 set /p sendhost="Enter their hostname: "
 
 ping %sendhost%
@@ -1338,7 +1404,7 @@ cls
 
 type calculator.txt
 
-Title Calculator V1.1
+Title Your mom lol
 setlocal enabledelayedexpansion
 :loop6
 set /a inf=1
@@ -1466,7 +1532,7 @@ Echo -------------------
 goto :loop6
 pause
 
-
+title Your mom lol
 
 
 
@@ -1479,9 +1545,6 @@ cls
 type mailbomber.txt                                                                   
 
 timeout /t 2 >nul
-
-echo .
-echo .
 
 echo Note: Only works with Gmail
 
@@ -1501,7 +1564,7 @@ type mailbomber.txt
 
 start "chrome.exe" "https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4P7J2XcOHV3r10xHQXQzZ20qFxOL1Lx8sEE0m4lyMIGf-FY1tjrtP3CgjVJVda_V3jYBN-TcqwQza4dYY3gG-1xpIoP1g"
 
-goto mailcont
+goto mailbomber
 
 
 REM CONTINUING>>>>>>>>>>>>>>>>>>>>>>>
@@ -1574,7 +1637,7 @@ REM SCRCPY----------------------------------
 
 cls
 
-type scrcpyinstall.txt
+type scrcpyinstallls.txt
 
 set /p kljd="Do you want to launch or install scrcpy?(scrcpy is not installed by default)[launch/install]: "
 
@@ -1585,6 +1648,8 @@ if %kljd%==exit goto mainmenu
 :scrinstall
 
 cls
+
+type scrcpyinstallls.txt
 
 echo -----------------
 echo 01 How it works
@@ -1606,6 +1671,8 @@ REM SCRWIKI>>>>>>>>>>>>>>>
 
 cls
 
+type scrcpyinstallls.txt
+
 echo ---------------------------------------------------------------------------------------------------------------------------
 echo Only Android compatible
 echo It works by usb
@@ -1626,6 +1693,8 @@ REM SCRDOWNLOAD>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :scrdownload
 
 cls
+
+type scrcpyinstallls.txt
 
 echo --------------------------------------------------------------------------------------------------------------------
 echo There will most likely be a popup which says that this file is an unusual Download and may be harming to your system.
@@ -1679,6 +1748,8 @@ timeout /t 1 >nul
  
 cls
 
+type scrcpyinstallls.txt
+
 set /p sjd="Launch now?[y/n]: "
 
 if %sjd%==n goto scrcpy
@@ -1686,6 +1757,10 @@ if %sjd%==y goto launnch
 
 
 :launnch
+
+cls
+
+type scrcpyinstallls.txt
 
 cd 
 
