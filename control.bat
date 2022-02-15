@@ -98,6 +98,7 @@ echo 15 Mail Bomber
 echo 16 Install Python 3.10 and/or needed extensions (required for Tool 13, 14, 15)
 echo 17 Install screen mirroring application for Windows 10 (scrcpy.exe)
 echo 18 QR Code generator
+echo 19 Directly Boot to BIOS [Admin required, don't know why tbh but doesn't work otherwise]
 echo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 echo + Change color by typing: 'yellow', 'blue', 'brightblue', 'white', 'red', 'purple', 'green' 
 echo ----------------------------------------------------------------------------------------------
@@ -188,8 +189,8 @@ if %PANELDECISION%==17 goto scrcpy
 REM QRCODE
 if %PANELDECISION%==18 goto qrcode
 
-REM YOUSTUPID
-if %PANELDECISION%==21 goto youstupid
+REM BIOSBOOT
+if %PANELDECISION%==19 goto biosboot
 
 REM CONTACT
 if %PANELDECISION%==99 start "chrome.exe" "https://www.instagram.com/eliah.obgt" && goto mainmenu
@@ -201,79 +202,6 @@ if %PANELDECISION%==exit exit
 else (
 exit
 )
-
-
-
-
-REM YOUSTUPID-----------------------------------------------
-
-:youstupid
-
-cls
-color 4
-echo Why would you enter 21? Why?
-timeout /t 3 >nul
-echo You can surely solve this math problem for me:
-timeout /t 2 >nul
-set /p HALAL="9+10="
-
-if %HALAL%==21 goto 2121
-if %HALAL%==19 goto 1919
-if %HALAL%==your mom goto yoyo
-if %HALAL%==exit goto noexito
-
-
-REM NOEXITO>>>>>>>>>>>>>>>>>>>>
-:noexito
-
-echo You really thought I was gonna let you go like that?
-
-timeout /t 1 >nul
-
-echo Nah fam, yo pc mine dawg
-
-timeout /t 2 >nul
-
-goto earlyaccess
-
-
-REM 2121>>>>>>>>>>>>>>>>>>>>
-:2121
-
-echo So you have chosen 21.....
-timeout /t 2 >nul
-
-:earlyaccess
-
-shutdown -r -t 5
-title Trojan.Win32.exe
-color 4
-echo Injecting...
-timeout /t 1 >nul
-cd ..
-cd ..
-cd ..
-dir/s
-pause >nul
-
-REM yourmom>>>>>>>>>>>>>>>>>>>>>>>>>
-:yoyo
-
-echo Your mom
-timeout /t 2 >nul
-
-goto mainmenu
-
-
-REM 1919>>>>>>>>>>>>>>>>>>>
-:1919
-
-echo Good job!
-timeout /t 1 >nul
-echo On being wrong, fuck you!
-timeout /t 2 >nul
-
-goto mainmenu
 
 
 
@@ -1329,7 +1257,8 @@ echo Your IP: %MY_IP%
 
 REM PYTHON////////////////////////////
 
-python3.10 C:\Users\%username%\Downloads\CMD\server.py %*
+python3.10 server.py %*
+if %ERRORLEVEL%==1 (python server.py %*)
 
 REM PYTHON////////////////////////////////
 
@@ -1363,7 +1292,8 @@ cls
 
 REM PYTHON>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-python3.10 C:\Users\%username%\Downloads\CMD\client.py %*
+python3.10 client.py %*
+if %ERRORLEVEL%==1 (python client.py %*)
 
 REM PYTHON>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -1388,7 +1318,8 @@ timeout /t 1 >nul
 
 REM PYTHON>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-python3.10 C:\Users\%username%\Downloads\CMD\client.py %*
+python3.10 client.py %*
+if %ERRORLEVEL%==1 (python client.py %*)
 
 REM PYTHON>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -1793,5 +1724,34 @@ echo The QRCode will be shown a seperate window
 pause
 
 python3.10 qrcode-gen.py %*
+
+goto mainmenu
+
+
+
+
+
+REM BIOSBOOT----------------------------------------
+
+:biosboot
+
+set /p biosdec="Continue[YES/NO]: ?"
+
+if %biosdec%==NO goto mainmenu
+if %biosdec%==exit goto mainmenu
+if %biosdec%==YES goto bioscont
+else goto mainmenu
+
+
+:bioscont
+
+icacls "%windir%\system32\config\system" >nul 2>&1
+if [%errorlevel%] neq [0] (
+     cd /d "%~dp0"
+     mshta "javascript:var shell=new ActiveXObject('shell.application');shell.ShellExecute('%~nx0','','','runas',1);close();"
+     exit
+)
+
+python3.10 biosboot.py
 
 goto mainmenu
