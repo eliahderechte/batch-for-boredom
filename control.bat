@@ -1735,6 +1735,8 @@ REM BIOSBOOT----------------------------------------
 
 :biosboot
 
+cls
+
 set /p biosdec="Continue[YES/NO]: ?"
 
 if %biosdec%==NO goto mainmenu
