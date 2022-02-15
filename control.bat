@@ -60,13 +60,14 @@ type cmdtext.txt
 
 timeout /t 1 >nul
 
-
+echo Python scripts do not work when this script is being run as admin
+echo .
 echo You can always go back by typing 'exit' if there is a prompt
-
+echo .
 echo You can leave the main menu (where you are right now) by typing '00' or 'exit'
-
+echo .
 echo Don't change the folder of anything that has been done by this script. 
-
+echo .
 echo If you do so the code won't most likely work properly
 
 echo --------------------------------------------------------------------------
