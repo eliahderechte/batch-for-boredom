@@ -15,7 +15,7 @@ To do so just launch the script via control.bat and goto 16 and install it. <br/
 
 ```
 Open a new Terminal
-git clone https://github.com/eliahderechte/batch-for-boredom
+git clone https://github.com/eliahderechte/batch-for-boredom.git
 cd batch-for-boredom
 control.bat
 ```
