@@ -103,6 +103,7 @@ echo 19 Directly Boot to BIOS [Admin required, don't know why tbh but doesn't wo
 echo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 echo + Change color by typing: 'yellow', 'blue', 'brightblue', 'white', 'red', 'purple', 'green' 
 echo ----------------------------------------------------------------------------------------------
+echo 98 Uninstall
 echo 99 Contact me on Instagram for help, etc.
 echo ----------------------------------------------------------------------------------------------
 
@@ -192,6 +193,9 @@ if %PANELDECISION%==18 goto qrcode
 
 REM BIOSBOOT
 if %PANELDECISION%==19 goto biosboot
+
+REM UNINSTALL
+if %PANELDECISION%==98 goto uninstall
 
 REM CONTACT
 if %PANELDECISION%==99 start "chrome.exe" "https://www.instagram.com/eliah.obgt" && goto mainmenu
@@ -1767,3 +1771,35 @@ else {
 python3.10 biosboot.py %*
 
 goto mainmenu
+
+
+
+REM UNINSTALL---------------------------------------------------
+
+:uninstall
+
+cls
+
+echo You may need to confirm a second time
+echo -------------------------------------
+set /p unindec="Are you sure?[YES/NO]: "
+
+if %unindec%==NO goto mainmenu
+if %unindec%==YES goto uninstallll
+else {
+     goto mainmenu
+}
+
+:uninstallll
+
+cd ..
+
+del batch-for-boredom
+
+timeout /t 1 >nul
+
+echo If you see this message, you need to uninstall manually, go ahead
+
+pause
+
+exit
