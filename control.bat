@@ -96,7 +96,7 @@ echo 12 Create Matrix
 echo 13 Send Messages per IP
 echo 14 Calculator
 echo 15 Mail Bomber
-echo 16 Install Python 3.10 and/or needed extensions (required for Tool 13, 14, 15)
+echo 16 Install Python 3.10 and/or needed extensions (required for Tool 13, 14, 15, 18)
 echo 17 Install screen mirroring application for Windows 10 (scrcpy.exe)
 echo 18 QR Code generator
 echo 19 Directly Boot to BIOS [Admin required, don't know why tbh but doesn't work otherwise]
