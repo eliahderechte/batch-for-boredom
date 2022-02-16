@@ -1794,7 +1794,7 @@ else {
 
 cd ..
 
-del batch-for-boredom
+rmdir /S batch-for-boredom
 
 timeout /t 1 >nul
 
